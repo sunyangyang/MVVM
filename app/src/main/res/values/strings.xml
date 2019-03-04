@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="login_phone_number">手机号码</string>
+    <string name="login_tips_input_phone_number">请输入手机号码</string>
+    <string name="login_next">下一步</string>
+    <string name="login_use_email">使用邮箱登录</string>
+    <string name="login_use_phone_number">使用手机号登录</string>
+    <string name="login_email_login">登录</string>
+    <string name="login_email_address">邮箱账号</string>
+    <string name="login_email_password">密码</string>
+    <string name="login_tips_input_code">请输入验证码</string>
+    <string name="login_code_to_number">验证码已发送至手机：%s</string>
+    <string name="login_invalid_number">无效的手机号码</string>
+    <string name="login_re_send_code">重发验证码</string>
+    <string name="login_re_send_code_time_down">00:%s后 重发验证码</string>
+    <string name="login_cancel">取消</string>
+    <string name="login_ch">中国 +</string>
+    <string name="login_usa">美国 +</string>
+    <string name="login_add">+</string>
+    <string name="login_ch_area_code">86</string>
+    <string name="login_usa_area_code">1</string>
+    <string name="login_send_code">正在发送验证码</string>
+    <string name="login_send_code_failed">验证码发送失败，请重试</string>
+    <string name="login_error_code">错误验证码</string>
+    <string name="login_login">登录中...</string>
+</resources>

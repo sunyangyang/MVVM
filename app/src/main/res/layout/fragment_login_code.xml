@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <import type="android.text.TextUtils"/>
+        <variable
+            name="loginModel"
+            type="com.example.myapplication.login.model.LoginModel"/>
+        <variable
+            name="viewModel"
+            type="com.example.myapplication.login.viewmodel.LoginViewModel"/>
+        <variable
+            name="callback"
+            type="com.example.myapplication.login.callback.LoginCodeCallback"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login_activity">
+        <ImageView
+            android:id="@+id/login_img_back"
+            android:onClick="@{()-> callback.backToNumberFragment()}"
+            android:paddingLeft="16dp"
+            android:paddingTop="33dp"
+            android:paddingRight="16dp"
+            android:src="@drawable/ic_icon_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:id="@+id/layout_code"
+            android:layout_below="@+id/login_img_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="51dp"
+            >
+            <TextView
+                android:textSize="29dp"
+                android:textColor="@android:color/white"
+                android:text="@string/login_tips_input_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="14dp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="2dp"
+                android:text="@{@string/login_code_to_number(&apos;+&apos; + loginModel.areaCode + ' ' +loginModel.phoneNumber)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:text="@={viewModel.mCodes[viewModel.KEY_FIRST]}"
+                    android:id="@+id/edit_code_first"
+                    style="@style/login_code"
+                    />
+                <View
+                    android:layout_width="25dp"
+                    android:layout_height="1dp"/>
+                <EditText
+                    android:text="@={viewModel.mCodes[viewModel.KEY_SECOND]}"
+                    android:id="@+id/edit_code_second"
+                    style="@style/login_code" />
+                <View
+                    android:layout_width="25dp"
+                    android:layout_height="1dp"/>
+                <EditText
+                    android:text="@={viewModel.mCodes[viewModel.KEY_THIRD]}"
+                    android:id="@+id/edit_code_third"
+                    style="@style/login_code" />
+                <View
+                    android:layout_width="25dp"
+                    android:layout_height="1dp"/>
+                <EditText
+                    android:text="@={viewModel.mCodes[viewModel.KEY_FOURTH]}"
+                    android:id="@+id/edit_code_fourth"
+                    style="@style/login_code" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_re_send_code"
+                android:layout_marginTop="12dp"
+                android:text="@{viewModel.mTimeCount &lt;= 0 ? @string/login_re_send_code : @string/login_re_send_code_time_down(viewModel.getCodeTime())}"
+                android:textSize="14dp"
+                android:textColor="@{viewModel.mTimeCount &lt;= 0 ? 0xffC4CDFF : 0xff6176E7}"
+                android:enabled="@{viewModel.mTimeCount &lt;= 0 ? true : false}"
+                android:onClick="@{()-> callback.sendCode()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

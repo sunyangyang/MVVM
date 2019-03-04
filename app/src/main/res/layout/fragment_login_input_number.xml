@@ -1,0 +1,113 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="loginModel"
+            type="com.example.myapplication.login.model.LoginModel" />
+
+        <variable
+            name="viewModel"
+            type="com.example.myapplication.login.viewmodel.LoginViewModel" />
+
+        <variable
+            name="callback"
+            type="com.example.myapplication.login.callback.LoginNumberCallback"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login_activity"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="108dp"
+        android:paddingRight="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="登录"
+                android:textColor="@android:color/white"
+                android:textSize="29dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/login_tips"
+                android:layout_marginTop="62dp"
+                android:text="@string/login_phone_number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:onClick="@{()->callback.showAreaCodePop()}"
+                    android:id="@+id/txt_area_code"
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_icon_down"
+                    android:paddingRight="16dp"
+                    android:text="@{@string/login_add + loginModel.areaCode}"
+                    android:textColor="@android:color/white"
+                    android:textSize="17dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="22dp"
+                    android:background="#6176E7" />
+
+                <EditText
+                    android:id="@+id/edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@null"
+                    android:hint="@string/login_tips_input_phone_number"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:singleLine="true"
+                    android:text="@={loginModel.phoneNumber}"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_login_input_hint"
+                    android:textCursorDrawable="@drawable/color_white_text_cursor"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="44dp"
+                android:background="@color/color_login_bottom_line" />
+
+            <Button
+                android:onClick="@{()->callback.toCodeFragment()}"
+                android:id="@+id/btn_phone_next"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:background="@drawable/bg_btn_login"
+                android:enabled="@{TextUtils.isEmpty(loginModel.phoneNumber) ? false : true}"
+                android:gravity="center"
+                android:text="@string/login_next"
+                android:textColor="#4254BD" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
