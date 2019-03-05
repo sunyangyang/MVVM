@@ -5,7 +5,7 @@ import android.databinding.ObservableArrayList;
 import android.databinding.ObservableField;
 
 import com.example.myapplication.R;
-import com.example.myapplication.base.BaseModel;
+import com.syy.lib_common.base.BaseModel;
 
 public class LoginModel extends BaseModel {
     public ObservableField<String> phoneNumber = new ObservableField<>();

@@ -1,4 +1,4 @@
-package com.example.myapplication.util;
+package com.syy.lib_common.util;
 
 import android.content.Context;
 import android.graphics.Color;

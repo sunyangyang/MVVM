@@ -10,12 +10,12 @@ import android.widget.PopupWindow;
 
 import com.example.myapplication.BR;
 import com.example.myapplication.R;
-import com.example.myapplication.base.BaseVMShareModelFragment;
+import com.syy.lib_common.base.BaseVMShareModelFragment;
 import com.example.myapplication.databinding.FragmentLoginInputNumberBinding;
 import com.example.myapplication.databinding.PopupShowAreaCodeBinding;
 import com.example.myapplication.login.callback.LoginNumberCallback;
 import com.example.myapplication.login.viewmodel.LoginViewModel;
-import com.example.myapplication.util.AppUtil;
+import com.syy.lib_common.util.AppUtil;
 
 public class LoginInputNumberFragment extends BaseVMShareModelFragment<FragmentLoginInputNumberBinding, LoginViewModel> implements LoginNumberCallback {
     private PopupWindow popupWindow;

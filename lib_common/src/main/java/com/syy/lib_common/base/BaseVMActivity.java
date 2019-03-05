@@ -1,4 +1,4 @@
-package com.example.myapplication.base;
+package com.syy.lib_common.base;
 
 import android.app.Activity;
 import android.arch.lifecycle.ViewModelProvider;

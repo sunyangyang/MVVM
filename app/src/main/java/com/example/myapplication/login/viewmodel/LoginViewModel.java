@@ -8,9 +8,9 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.example.myapplication.R;
-import com.example.myapplication.base.BaseApplication;
-import com.example.myapplication.base.BaseViewModel;
 import com.example.myapplication.login.model.LoginModel;
+import com.syy.lib_common.base.BaseApplication;
+import com.syy.lib_common.base.BaseViewModel;
 
 import java.util.regex.Pattern;
 

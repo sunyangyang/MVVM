@@ -1,4 +1,4 @@
-package com.example.myapplication.base;
+package com.syy.lib_common.base;
 
 import android.arch.lifecycle.ViewModelProvider;
 import android.databinding.DataBindingUtil;

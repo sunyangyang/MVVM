@@ -10,12 +10,12 @@ import android.widget.Toast;
 
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.base.BaseVMActivity;
+import com.syy.lib_common.base.BaseVMActivity;
 import com.example.myapplication.databinding.ActivityLoginBinding;
 import com.example.myapplication.login.viewmodel.LoginViewModel;
-import com.example.myapplication.util.AppUtil;
-import com.example.myapplication.util.DisplayHelper;
-import com.example.myapplication.util.ToastUtils;
+import com.syy.lib_common.util.AppUtil;
+import com.syy.lib_common.util.DisplayHelper;
+import com.syy.lib_common.util.ToastUtils;
 
 public class LoginActivity extends BaseVMActivity<ActivityLoginBinding, LoginViewModel> {
 

@@ -6,7 +6,7 @@ import android.widget.EditText;
 
 import com.example.myapplication.BR;
 import com.example.myapplication.R;
-import com.example.myapplication.base.BaseVMShareModelFragment;
+import com.syy.lib_common.base.BaseVMShareModelFragment;
 import com.example.myapplication.databinding.FragmentLoginCodeBinding;
 import com.example.myapplication.login.callback.LoginCodeCallback;
 import com.example.myapplication.login.viewmodel.LoginViewModel;
