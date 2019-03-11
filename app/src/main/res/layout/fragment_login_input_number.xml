@@ -6,10 +6,6 @@
         <import type="android.text.TextUtils" />
 
         <variable
-            name="loginModel"
-            type="com.example.myapplication.login.model.LoginModel" />
-
-        <variable
             name="viewModel"
             type="com.example.myapplication.login.viewmodel.LoginViewModel" />
 
@@ -64,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_icon_down"
                     android:paddingRight="16dp"
-                    android:text="@{@string/login_add + loginModel.areaCode}"
+                    android:text="@{@string/login_add + viewModel.loginModel.areaCode}"
                     android:textColor="@android:color/white"
                     android:textSize="17dp" />
 
@@ -83,7 +79,7 @@
                     android:inputType="phone"
                     android:maxLength="11"
                     android:singleLine="true"
-                    android:text="@={loginModel.phoneNumber}"
+                    android:text="@={viewModel.getLoginModel().get().phoneNumber}"
                     android:textColor="@android:color/white"
                     android:textColorHint="@color/color_login_input_hint"
                     android:textCursorDrawable="@drawable/color_white_text_cursor"
@@ -103,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:background="@drawable/bg_btn_login"
-                android:enabled="@{TextUtils.isEmpty(loginModel.phoneNumber) ? false : true}"
+                android:enabled="@{TextUtils.isEmpty(viewModel.loginModel.phoneNumber) ? false : true}"
                 android:gravity="center"
                 android:text="@string/login_next"
                 android:textColor="#4254BD" />

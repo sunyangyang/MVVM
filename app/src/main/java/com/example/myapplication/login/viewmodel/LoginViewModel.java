@@ -2,7 +2,9 @@ package com.example.myapplication.login.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.MutableLiveData;
+import android.database.Observable;
 import android.databinding.ObservableArrayList;
+import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.text.TextUtils;
 import android.view.View;
@@ -47,7 +49,7 @@ public class LoginViewModel extends BaseViewModel {
 
     public MutableLiveData<Integer> mIndex = new MutableLiveData<>();
 
-    private MutableLiveData<LoginModel> mLoginModel = new MutableLiveData<>();
+    private ObservableField<LoginModel> mLoginModel = new ObservableField<>();
 
     public ObservableArrayList<String> mCodes = new ObservableArrayList<>();
 
@@ -69,21 +71,21 @@ public class LoginViewModel extends BaseViewModel {
     }
 
     public void setLoginBean(LoginModel loginModel) {
-        this.mLoginModel.setValue(loginModel);
+        this.mLoginModel.set(loginModel);
     }
 
 
-    public MutableLiveData<LoginModel> getLoginModel() {
-        if (mLoginModel.getValue() == null) {
+    public ObservableField<LoginModel> getLoginModel() {
+        if (mLoginModel.get() == null) {
             LoginModel loginModel = new LoginModel();
             loginModel.initData(getApplication());
-            mLoginModel.setValue(loginModel);
+            mLoginModel.set(loginModel);
         }
         return mLoginModel;
     }
 
     public void toCodeFragment() {
-        if (!isMobile(mLoginModel.getValue().phoneNumber.get())) {
+        if (!isMobile(mLoginModel.get().phoneNumber.get())) {
             showToast.setValue(SHOW_NUMBER_ERROR);
         } else {
             sendCode();
@@ -118,7 +120,7 @@ public class LoginViewModel extends BaseViewModel {
     }
 
     public void login(String verificationCode) {
-        getLoginModel().getValue().verificationCode.set(verificationCode);
+        getLoginModel().get().verificationCode.set(verificationCode);
         isSuccess.setValue(true);
     }
 

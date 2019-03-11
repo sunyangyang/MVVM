@@ -29,9 +29,6 @@ public class LoginInputNumberFragment extends BaseVMShareModelFragment<FragmentL
     @Override
     protected void initFragment() {
         mRes = getResources();
-        if (getViewModel() != null) {
-            getDataBinding().setLoginModel(getViewModel().getLoginModel().getValue());
-        }
     }
 
     @Override
@@ -54,7 +51,7 @@ public class LoginInputNumberFragment extends BaseVMShareModelFragment<FragmentL
         AppUtil.hideSoftInput(getContext(), getActivity().getCurrentFocus());
         if (popupWindow == null) {
             PopupShowAreaCodeBinding binding = DataBindingUtil.inflate(LayoutInflater.from(getContext()), R.layout.popup_show_area_code, null, false);
-            binding.setAreaCode(getViewModel().getLoginModel().getValue().areaList);
+            binding.setAreaCode(getViewModel().getLoginModel().get().areaList);
             binding.setCallback(this);
             popupWindow = new PopupWindow(binding.getRoot(), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             popupWindow.setBackgroundDrawable(new ColorDrawable());
@@ -74,7 +71,7 @@ public class LoginInputNumberFragment extends BaseVMShareModelFragment<FragmentL
 
     @Override
     public void changeArea(String areaCode) {
-        getViewModel().getLoginModel().getValue().areaCode.set(areaCode);
+        getViewModel().getLoginModel().get().areaCode.set(areaCode);
         if (popupWindow.isShowing()) {
             popupWindow.dismiss();
         }
