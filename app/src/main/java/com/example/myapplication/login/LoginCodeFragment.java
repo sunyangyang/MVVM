@@ -25,7 +25,6 @@ public class LoginCodeFragment extends BaseVMShareModelFragment<FragmentLoginCod
     @Override
     protected void initFragment() {
         if (getViewModel() != null) {
-            getDataBinding().setLoginModel(getViewModel().getLoginModel().get());
             //edittext中的内容
             if (getViewModel().mCodes != null) {
                 getViewModel().mCodes.clear();

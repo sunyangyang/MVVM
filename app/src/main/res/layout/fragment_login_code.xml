@@ -5,9 +5,6 @@
 
         <import type="android.text.TextUtils"/>
         <variable
-            name="loginModel"
-            type="com.example.myapplication.login.model.LoginModel"/>
-        <variable
             name="viewModel"
             type="com.example.myapplication.login.viewmodel.LoginViewModel"/>
         <variable
@@ -47,7 +44,7 @@
                 android:textSize="14dp"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="2dp"
-                android:text="@{@string/login_code_to_number(&apos;+&apos; + loginModel.areaCode + ' ' +loginModel.phoneNumber)}"
+                android:text="@{@string/login_code_to_number(&apos;+&apos; + viewModel.loginModel.areaCode + ' ' + viewModel.loginModel.phoneNumber)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <LinearLayout
